@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { ThemeProvider, useTheme } from "@/components/ThemeProvider";
 import { AppSidebar } from "@/components/AppSidebar";
+import LandingPage from "@/pages/LandingPage";
 import LoginPage from "@/pages/LoginPage";
+import SignupPage from "@/pages/SignupPage";
 import Dashboard from "@/pages/Dashboard";
 import PostComposer from "@/pages/PostComposer";
 import PostHistory from "@/pages/PostHistory";
@@ -57,12 +59,20 @@ function AuthenticatedLayout({ children }: { children: React.ReactNode }) {
 function Router() {
   const [location] = useLocation();
   
-  // Show login page for root path
-  if (location === "/" || location === "/login") {
+  // Public routes that don't require authentication
+  if (location === "/") {
+    return <LandingPage />;
+  }
+  
+  if (location === "/login") {
     return <LoginPage />;
   }
   
-  // All other routes require authentication layout
+  if (location === "/signup") {
+    return <SignupPage />;
+  }
+  
+  // All authenticated routes require authentication layout
   return (
     <AuthenticatedLayout>
       <Switch>

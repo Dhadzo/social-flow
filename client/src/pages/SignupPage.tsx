@@ -7,15 +7,17 @@ import { Separator } from "@/components/ui/separator";
 import { Github, Mail, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
 
-export default function LoginPage() {
+export default function SignupPage() {
   const [, setLocation] = useLocation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState('');
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login attempt:', { email, password });
-    // TODO: Implement actual login
+    console.log('Signup attempt:', { name, email, password, confirmPassword });
+    // TODO: Implement actual signup
     setLocation('/dashboard');
   };
 
@@ -40,14 +42,26 @@ export default function LoginPage() {
           <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
             <span className="text-primary-foreground font-bold text-xl">SH</span>
           </div>
-          <CardTitle className="text-2xl">Welcome Back</CardTitle>
+          <CardTitle className="text-2xl">Create Your Account</CardTitle>
           <CardDescription>
-            Sign in to your SocialHub account
+            Join thousands of businesses using SocialHub
           </CardDescription>
         </CardHeader>
         
         <CardContent>
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleSignup} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="name">Full Name</Label>
+              <Input
+                id="name"
+                type="text"
+                placeholder="John Doe"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                data-testid="input-name"
+              />
+            </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -65,24 +79,27 @@ export default function LoginPage() {
               <Input
                 id="password"
                 type="password"
-                placeholder="Enter your password"
+                placeholder="Create a strong password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 data-testid="input-password"
               />
             </div>
-            <div className="flex items-center justify-between">
-              <button 
-                type="button"
-                onClick={() => setLocation('/forgot-password')}
-                className="text-sm text-primary hover:underline"
-              >
-                Forgot password?
-              </button>
+            <div className="space-y-2">
+              <Label htmlFor="confirm-password">Confirm Password</Label>
+              <Input
+                id="confirm-password"
+                type="password"
+                placeholder="Confirm your password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                data-testid="input-confirm-password"
+              />
             </div>
-            <Button type="submit" className="w-full" data-testid="button-login">
-              Sign In
+            <Button type="submit" className="w-full" data-testid="button-signup">
+              Create Account
             </Button>
           </form>
           
@@ -112,14 +129,30 @@ export default function LoginPage() {
           </div>
         </CardContent>
         
-        <CardFooter>
-          <p className="text-sm text-center w-full">
-            Don't have an account?{" "}
+        <CardFooter className="flex flex-col space-y-2">
+          <p className="text-sm text-muted-foreground text-center">
+            By creating an account, you agree to our{" "}
             <button 
-              onClick={() => setLocation('/signup')}
+              onClick={() => setLocation('/terms')}
+              className="text-primary hover:underline"
+            >
+              Terms of Service
+            </button>{" "}
+            and{" "}
+            <button 
+              onClick={() => setLocation('/privacy')}
+              className="text-primary hover:underline"
+            >
+              Privacy Policy
+            </button>
+          </p>
+          <p className="text-sm text-center">
+            Already have an account?{" "}
+            <button 
+              onClick={() => setLocation('/login')}
               className="text-primary hover:underline font-medium"
             >
-              Sign up
+              Sign in
             </button>
           </p>
         </CardFooter>
