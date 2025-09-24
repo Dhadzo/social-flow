@@ -17,9 +17,9 @@ const mockPosts: Post[] = [
     platforms: ['twitter', 'linkedin'],
     status: 'posted',
     scheduledAt: null,
-    publishedAt: new Date(Date.now() - 3600000).toISOString(),
-    createdAt: new Date(Date.now() - 3600000).toISOString(),
-    updatedAt: new Date(Date.now() - 3600000).toISOString(),
+    publishedAt: new Date(Date.now() - 3600000),
+    createdAt: new Date(Date.now() - 3600000),
+    updatedAt: new Date(Date.now() - 3600000),
   },
   {
     id: '2',
@@ -28,10 +28,10 @@ const mockPosts: Post[] = [
     mediaUrls: [],
     platforms: ['twitter', 'facebook'],
     status: 'scheduled',
-    scheduledAt: new Date(Date.now() + 7200000).toISOString(),
+    scheduledAt: new Date(Date.now() + 7200000),
     publishedAt: null,
-    createdAt: new Date(Date.now() - 1800000).toISOString(),
-    updatedAt: new Date(Date.now() - 1800000).toISOString(),
+    createdAt: new Date(Date.now() - 1800000),
+    updatedAt: new Date(Date.now() - 1800000),
   },
 ];
 
@@ -44,7 +44,7 @@ const mockAccounts: SocialAccount[] = [
     isConnected: true,
     accessToken: 'token1',
     refreshToken: 'refresh1',
-    connectedAt: new Date(Date.now() - 86400000).toISOString(),
+    connectedAt: new Date(Date.now() - 86400000),
   },
   {
     id: '2',
@@ -54,7 +54,7 @@ const mockAccounts: SocialAccount[] = [
     isConnected: true,
     accessToken: 'token2',
     refreshToken: 'refresh2',
-    connectedAt: new Date(Date.now() - 172800000).toISOString(),
+    connectedAt: new Date(Date.now() - 172800000),
   },
   {
     id: '3',

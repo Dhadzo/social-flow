@@ -10,7 +10,7 @@ const mockAccount: SocialAccount = {
   isConnected: true,
   accessToken: 'token123',
   refreshToken: 'refresh123',
-  connectedAt: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
+  connectedAt: new Date(Date.now() - 86400000), // 1 day ago
 };
 
 export default function AccountCardExample() {

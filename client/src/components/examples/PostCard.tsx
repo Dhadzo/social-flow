@@ -12,10 +12,10 @@ const mockPost: Post = {
   ],
   platforms: ['twitter', 'linkedin', 'facebook'],
   status: 'scheduled',
-  scheduledAt: new Date(Date.now() + 3600000).toISOString(), // 1 hour from now
+  scheduledAt: new Date(Date.now() + 3600000), // 1 hour from now
   publishedAt: null,
-  createdAt: new Date().toISOString(),
-  updatedAt: new Date().toISOString(),
+  createdAt: new Date(),
+  updatedAt: new Date(),
 };
 
 export default function PostCardExample() {
