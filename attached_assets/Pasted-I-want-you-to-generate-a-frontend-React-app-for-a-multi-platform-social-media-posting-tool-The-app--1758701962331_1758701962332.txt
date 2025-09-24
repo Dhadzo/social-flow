@@ -1,0 +1,85 @@
+I want you to generate a frontend React app for a multi-platform social media posting tool. The app should let users connect social media accounts, create posts with text and media, select platforms, schedule posts, and view post history.
+
+Requirements:
+
+Use React and functional components.
+
+Use TailwindCSS for styling.
+
+Use React Router for navigation between pages.
+
+Use React Query for data fetching, caching, and state management of posts and connected accounts.
+
+Include the following pages/components:
+
+Login / Signup page
+
+Email/password login form
+
+OAuth login buttons (Google, GitHub)
+
+Dashboard
+
+Overview of connected social media accounts
+
+Button to create a new post
+
+List of recent posts with status (Posted / Scheduled / Failed)
+
+Use React Query to fetch mock posts and accounts
+
+Post Composer Page
+
+Textarea for post content
+
+Media uploader (images/video) preview
+
+Platform selection checkboxes (Twitter, Facebook, LinkedIn, Instagram, TikTok)
+
+Schedule post date/time picker
+
+Submit button to post now or schedule
+
+Update React Query cache after posting
+
+Post History Page
+
+Table/list of past posts
+
+Status of each post (success/failure)
+
+Platform icons showing where the post was published
+
+Settings Page
+
+Connect / disconnect social media accounts
+
+User profile info
+
+Functionality:
+
+Form validation for post content and media type
+
+Responsive design for desktop and mobile
+
+Modular component structure (Button, Input, Card, PostItem, MediaPreview)
+
+Use mock data for connected accounts and posts (no backend integration yet)
+
+Use React Query for all async data operations and caching
+
+Optional: use React Context for global UI state (like modals or notifications)
+
+Deliverables:
+
+A fully functional React app with Tailwind styling
+
+Clearly separated components in /components folder
+
+Routing in /pages folder
+
+Sample mock posts and accounts data to render lists and previews
+
+Nice modern UI design with cards, buttons, and forms
+
+React Query setup with mock API calls for posts and accounts
